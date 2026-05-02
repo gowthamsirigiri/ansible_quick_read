@@ -33,7 +33,7 @@ Here are few sample Files which helped me to quickly recap the pattern i have cr
 
 
 #here saw , hammer , brush are examples for the modules we use
-#modules are the predefined tool that can do you job for you
+#modules are the predefined tool that can do the job for you
 #just use the modules and set the instruction like cp, restart, mv , start the service or install something like this.
 # - indicate the list items in yaml
 
