@@ -1,1 +1,13 @@
+[db]
+ip4
+ip5
 
+[redis]
+ip[6...9]
+
+
+
+[linuxservers]
+ip1
+ip2
+ip3
