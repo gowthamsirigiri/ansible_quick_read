@@ -5,7 +5,12 @@ Here are few sample Files which helped me to quickly recap the pattern i have cr
 
 #the below section is known as play
 #we can have multiple play where thing will get executed based the top to bottom
-#list of plays executed but ansible is know as playbook
+#list of plays executed by ansible is know as playbook
+
+
+#Here we Go.........
+
+
 - name : Build A bird houses for john and paul
  hosts:
    - john
