@@ -1,0 +1,35 @@
+Here are few sample Files which helped me to quickly recap the pattern i have created 
+
+#sample Yaml file which build a bird house
+
+
+#the below section is known as play
+#we can have multiple play where thing will get executed based the top to bottom
+#list of plays executed but ansible is know as playbook
+- name : Build A bird houses for john and paul
+ hosts:
+   - john
+   - paul
+ tasks:
+   - name : Cut wood to size
+     saw:
+       length: 2
+       width: 3
+       //indentationtion are must remember
+    
+   - name : assemble the pieces with the nails
+     hammer:
+       nails: 1.5
+       type: galvanized
+   - name : Paint the house
+     brush:
+       colur: red
+       coats: 2
+
+
+#here saw , hammer , brush are examples for the modules we use
+#modules are the predefined tool that can do you job for you
+#just use the modules and set the instruction like cp, restart, mv , start the service or install something like this.
+# - indicate the list items in yaml
+
+
