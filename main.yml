@@ -1,0 +1,33 @@
+#Creted this things to to just have a quick recap of my project need to make few more change will add it soon here
+
+Update the config file and restart the service
+
+- name: Update/create the ngnix service and restart on required 
+  hosts: linuxservers
+  gather_fact: yes ''' this a key word which will collect the system info like services deamon other'''
+  connection: ssh
+  tasks:
+    - name: install the ngnix config from the node plane to the client servers
+      cp:
+      src: nginx.config 
+      dest: /etc/ngnix/ngnix.config 
+    become: true '''this key wordbecome say when you run this task become the root and execute'''
+    when os: linux
+    - name : check the service and restart if neccesary
+      service:
+        name: ngnix
+        state: restart
+
+#Below cmd will list the modules available
+ansible-doc -l
+
+
+
+
+
+
+
+  #Red state failure
+  #yellow state changed
+  #green means no changed occured
+  #blue means task got skipped
