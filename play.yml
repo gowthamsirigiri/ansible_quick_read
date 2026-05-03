@@ -1,0 +1,19 @@
+- name: Install and start Prometheus on slave machines
+  hosts: linux
+  become: true  # This applies to all tasks in the play
+  tasks:
+    - name: Ship the binaries to the destination
+      copy:
+        src: /bin/prometeus/  # The local source
+        dest: /bin/prometeus/ # The remote destination
+        mode: '0755'          # Ensures the binaries are executable
+
+    - name: Run the Prometheus binary
+      command: /bin/prometeus/prometeus_binary
+      when: ansible_os_family == "Debian" or ansible_os_family == "RedHat"
+
+    - name: Start the Prometheus service
+      systemd:
+        name: prometheus
+        state: started
+        enabled: true  # Ensures it starts on boot
