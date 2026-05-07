@@ -21,9 +21,15 @@ Update the config file and restart the service
 #Below cmd will list the modules available
 ansible-doc -l
 
+#to check the sytax error
+ansible-playbook -i inventory.yml playbook.yml
+
 
 #below is the run cmd -k is used to pass the become true password for sudo use
 ansible-playbook -i inventory.yml playbook.yml -K
+
+
+
 
 
 
